@@ -1,6 +1,6 @@
 // Função para gerar senhas seguras
 export function generatePassword(
-  length: number,
+  length: number | number[],
   useUppercase: boolean,
   useLowercase: boolean,
   useNumbers: boolean,
@@ -22,7 +22,7 @@ export function generatePassword(
   }
 
   let password = "";
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < (length as number); i++) {
     const randomIndex = Math.floor(Math.random() * charset.length);
     password += charset[randomIndex];
   }
