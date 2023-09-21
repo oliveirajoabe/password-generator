@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-export const Strength = ({ strength = "medium" }: StrengthProps) => {
+export const Strength = ({ strength }: StrengthProps) => {
   const itemStrength = {
     tooWeak: {
       title: "TOO WEAK!",
@@ -20,7 +20,7 @@ export const Strength = ({ strength = "medium" }: StrengthProps) => {
     <S.Container>
       <S.Title>STRENGTH</S.Title>
       <S.WrapperLevel>
-        <span>{itemStrength[strength]?.title}</span>
+        {strength && <span>{itemStrength[strength]?.title}</span>}
         <S.WrapperMarkerLevel strength={strength}>
           <S.Level />
           <S.Level />

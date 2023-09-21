@@ -20,7 +20,7 @@ interface PropsTeste {
 
 export const Home = () => {
   const [password, setPassword] = useState("");
-  const [strength, setStrength] = useState<Level>("medium");
+  const [strength, setStrength] = useState<Level>();
   const [config, setConfigs] = useState<PropsTeste>({
     length: 10,
     useUppercase: false,

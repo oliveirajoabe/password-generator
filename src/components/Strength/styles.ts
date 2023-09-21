@@ -33,7 +33,7 @@ const itemStrength = {
       background-color: ${({ theme }) => theme.colors.red};
     }
     :nth-child(n + 2) {
-      border: 1px solid #fff;
+      border: 2px solid #fff;
     }
   `,
   weak: () => css`
@@ -41,7 +41,7 @@ const itemStrength = {
       background-color: ${({ theme }) => theme.colors.orange};
     }
     :nth-child(n + 3) {
-      border: 1px solid #fff;
+      border: 2px solid #fff;
       background-color: initial;
     }
   `,
@@ -50,7 +50,7 @@ const itemStrength = {
       background-color: ${({ theme }) => theme.colors.yellow};
     }
     :nth-child(n + 4) {
-      border: 1px solid #fff;
+      border: 2px solid #fff;
       background-color: initial;
     }
   `,
@@ -66,7 +66,11 @@ export const WrapperMarkerLevel = styled.div<WrapperMarkerLevelProps>`
     display: flex;
     gap: 0.47rem;
 
-    ${itemStrength[strength]}
+    :nth-child(n) {
+      border: 2px solid #fff;
+    }
+
+    ${strength && itemStrength[strength]}
   `}
 `;
 
